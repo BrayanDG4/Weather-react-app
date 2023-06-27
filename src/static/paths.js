@@ -1,1 +1,1 @@
-export const API_KEY = "http://api.weatherapi.com/v1/forecast.json?key=130e81dd63ed4e0c90f175613231606&q=Aguachica&days=3&aqi=no&alerts=no";
+export const API_KEY = "http://api.weatherapi.com/v1/forecast.json?key=130e81dd63ed4e0c90f175613231606&q=London&days=3&aqi=no&alerts=no";

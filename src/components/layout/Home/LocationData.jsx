@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 
-export const LocationData = ({ image, data }) => {
+export const LocationData = ({ data }) => {
   return (
     <article className="flex px-2 items-center justify-between">
       <div className="mb-4">
