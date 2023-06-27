@@ -1,14 +1,11 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
-export const DailyWeather = ({image}) => {
+export const DailyWeather = ({ data }) => {
   return (
     <article>
       <nav className="border-solid border-b-2 border-b-slate-500">
         <ul className="flex gap-6 px-3 py-2 text-2xl text-white font-light">
-          <li>
-            <a href="">Daily</a>
-          </li>
-          <li>
+          <li className="hover:shadow-slate-50">
             <a href="">Daily</a>
           </li>
         </ul>
@@ -17,19 +14,37 @@ export const DailyWeather = ({image}) => {
       <div className="w-full mt-4">
         <ul className="flex gap-6 px-3 text-center text-xl text-white font-light">
           <li className="w-[14.2%]">
-            Monday
+            <h3 className="font-semibold">
+              {data.forecast.forecastday[1].date}
+            </h3>
             <div className="flex justify-center my-4">
               <div className="w-[60%]">
-                <img className="object-cover" src={image} alt="cloud" />
+                <img
+                  className="object-cover"
+                  src={data.forecast.forecastday[1].day.condition.icon}
+                  alt="cloud"
+                />
               </div>
             </div>
-            <h3 className="text-3xl font-semibold">11°</h3>
+            <h3 className="text-3xl font-semibold">{data.forecast.forecastday[1].day.maxtemp_c}°</h3>
           </li>
-          <li className="w-[14.2%]">Tuesday</li>
-          <li className="w-[14.2%]">Wednesday</li>
-          <li className="w-[14.2%]">Thursday</li>
-          <li className="w-[14.2%]">Friday</li>
-          <li className="w-[14.2%]">Saturday</li>
+
+          <li className="w-[14.2%]">
+            <h3 className="font-semibold">
+              {data.forecast.forecastday[2].date}
+            </h3>
+            <div className="flex justify-center my-4">
+              <div className="w-[60%]">
+                <img
+                  className="object-cover"
+                  src={data.forecast.forecastday[2].day.condition.icon}
+                  alt="cloud"
+                />
+              </div>
+            </div>
+            <h3 className="text-3xl font-semibold">{data.forecast.forecastday[2].day.maxtemp_c}°</h3>
+          </li>
+
         </ul>
       </div>
     </article>
@@ -37,5 +52,5 @@ export const DailyWeather = ({image}) => {
 };
 
 DailyWeather.propTypes = {
-    image: PropTypes.string,
-}
+  data: PropTypes.object,
+};
